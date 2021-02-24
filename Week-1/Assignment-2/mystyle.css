@@ -51,8 +51,10 @@ p {
 
 .flex-center {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .flex-end {
@@ -61,8 +63,9 @@ p {
 }
 
 .content {
-  margin-right: 5px;
-  margin-left: 5px;
+  /* since using flex-wrap and gap, margin-right and margin-left is not needed */
+  /* margin-right: 5px;
+  margin-left: 5px; */
   width: 400px;
   height: 60px;
   max-width: 1200px;
