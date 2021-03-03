@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+nav {
+  display: flex;
+  margin: 0 0 0 0;
+  background-color: gainsboro;
+}
+
+div {
+  display: flex;
+  padding: 5px;
+}
+
+h4 {
+  padding: 5px;
+}
+
+img {
+  display:block;
+  margin:auto;
+}
+
+section {
+  background-color: grey;
+  padding: 70px;
+}
+
+p {
+  text-align: center;
+  position:relative;
+  top:-70px;
+}
+
+.welcome-message{
+  padding: 70px;
+}
+
+.flex-center-blue {
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.flex-center-hidden {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.flex-end {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.content {
+  /* since using flex-wrap and gap, margin-right and margin-left is not needed */
+  /* margin-right: 5px;
+  margin-left: 5px; */
+  width: 400px;
+  height: 60px;
+  max-width: 1200px;
+}
+
+.call {
+  background-color: lightblue;
+  padding: 10px;
+}
