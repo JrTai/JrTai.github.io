@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <title>Sum HTML</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>From sum.html</h1>
+
+  <form>
+    <label for="number">Enter a integer number:</label><br>
+    <input type="text" id="number" name="number" value=""><br>
+    <input type="button" value="Submit" onclick="callAjax()">
+  </form> 
+
+  <script>
+    function callAjax() {
+        let number = document.querySelector('#number').value
+        const url = `http://localhost:3000/data?number=${number}`
+        $.ajax({
+              type: "POST",
+              url: url,
+              data: {number: number},
+              success: function(html)
+              {
+                  document.querySelector('body').innerHTML = html;
+              }
+            });
+    }
+  </script>
+</body>
+</html>
