@@ -46,20 +46,25 @@ app.get('/myName', (req, res) => {
     if (typeof req.cookies.username === 'undefined'){
         res.render('myName');
     } else {
-        res.send(`<h1>${req.cookies.username}</h1>`);
+        res.send(`<h1>${req.cookies.username}</h1><br>
+                  <form action="/clear_cookie_username", method="get">
+                    <input type="submit" value="Log Out"/>
+                  </form>`);
     }
 });
 
 // trackName get request for assignment-4
 app.get('/trackName', (req, res) => {
-    res.cookie('username', req.query.name)
+    if (req.query.name) {
+        res.cookie('username', req.query.name)
+    }
     res.redirect('/myName');
 });
 
 // clear cookie username
 app.get('/clear_cookie_username', (req, res) => {
     res.clearCookie('username');
-    res.send('<h1>cookie username cleared</h1>');
+    res.redirect('/myName');
  });
 
 app.listen(3000, () => {
