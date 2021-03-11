@@ -50,7 +50,7 @@ app.get('/myName', (req, res) => {
     }
 });
 
-// trackName post request for assignment-4
+// trackName get request for assignment-4
 app.get('/trackName', (req, res) => {
     res.cookie('username', req.query.name)
     res.redirect('/myName');
