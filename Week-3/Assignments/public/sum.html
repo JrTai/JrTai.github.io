@@ -11,8 +11,8 @@
 
   <form>
     <label for="number">Enter a integer number:</label><br>
-    <input type="text" id="number" name="number" value=""><br>
-    <input type="button" value="Submit" onclick="callAjax()">
+    <input type="text" id="number" name="number" value="" onkeydown="if (event.keyCode == 13) {document.getElementById('calculateNumber').click(); return false;} else {return true;}"><br>
+    <input id='calculateNumber' type="button" value="Submit" onclick="callAjax()">
   </form> 
 
   <script>
@@ -20,9 +20,9 @@
         let number = document.querySelector('#number').value
         const url = `http://localhost:3000/data?number=${number}`
         $.ajax({
-              type: "POST",
+              type: "GET",
               url: url,
-              data: {number: number},
+              data: number,
               success: function(html)
               {
                   document.querySelector('body').innerHTML = html;

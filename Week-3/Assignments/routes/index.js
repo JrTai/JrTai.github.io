@@ -6,21 +6,8 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
-// data get request for assignment-2
+// data get request for assignment-2 and assignment-3
 router.get('/data', (req, res) => {
-    if (!isNaN(req.query.number)) {
-        let arr = Array.from({length: req.query.number}, (_, i) => i + 1)
-        let sum = arr.reduce(function(pv, cv) {return pv + cv;}, 0);
-        res.send(`<h1>${sum}</h1>`);
-    } else if (typeof req.query.number === 'undefined') {
-        res.send('<h1>Lack of Parameter</h1>');
-    } else {
-        res.send('<h1>Wrong Parameter</h1>');
-    }
-});
-
-// data post request for assignment-3
-router.post('/data', (req, res) => {
     if (!isNaN(req.query.number)) {
         let arr = Array.from({length: req.query.number}, (_, i) => i + 1)
         let sum = arr.reduce(function(pv, cv) {return pv + cv;}, 0);
