@@ -1,6 +1,6 @@
 function twoSum(nums, target) {
     // your code here
-    let dic = {}
+    let dic = {};
     let diff;
     for (i=0; i<=nums.length; i++) {
         diff = target - nums[i]
