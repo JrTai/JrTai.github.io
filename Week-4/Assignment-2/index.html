@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>Assignment-2</title>
+  </head>
+  <body>
+    <script>
+      function ajax(src, callback) {
+        // your code here
+        const url = src;
+        $.ajax({
+          type: "GET",
+          url: url,
+          success: function (data) {
+            callback(data);
+          },
+        });
+      }
+      function render(data) {
+        // your code here.
+        // document.createElement() and appendChild() methods are preferred.
+        let body = document.querySelector('body')
+        for (i=0; i<data.length; i++) {
+          let div = document.createElement('div');
+          div.innerHTML = `<h1>${data[i].name}</h1><h2>${data[i].price}</h2><p>${data[i].description}</p>`
+          body.appendChild(div)
+        }
+      }
+
+      // you should get product information in JSON format and render data in the page
+      ajax(
+        "http://13.113.12.180:4000/api/1.0/remote-w4-data",
+        function (response) {
+          render(response);
+        }
+      );
+    </script>
+  </body>
+</html>
