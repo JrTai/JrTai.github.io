@@ -1,0 +1,13 @@
+#signForm, p, h1 {
+    display: flex;
+    padding: 20px;
+    background-color: lightblue;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+p {
+    background-color: lightcoral;
+}
