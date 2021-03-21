@@ -61,8 +61,8 @@ app.get("/insert_user", (req, res) => {
     res.send('email not valid');
     return;
   }
-  let check_exit_sql = `SELECT COUNT(1) FROM user WHERE email = '${req.query.email}';`;
-  let query = db.query(check_exit_sql, (err, results) => {
+  let check_exist_sql = `SELECT COUNT(1) FROM user WHERE email = '${req.query.email}';`;
+  let query = db.query(check_exist_sql, (err, results) => {
     if (err) throw err;
     if (results[0]["COUNT(1)"]) {
       res.send("user exist");
@@ -90,8 +90,8 @@ app.get("/login_user", (req, res) => {
     res.send('email not valid');
     return;
   }
-  let check_exit_sql = `SELECT COUNT(1) FROM user WHERE email = '${req.query.email}';`;
-  let query = db.query(check_exit_sql, (err, results) => {
+  let check_exist_sql = `SELECT COUNT(1) FROM user WHERE email = '${req.query.email}';`;
+  let query = db.query(check_exist_sql, (err, results) => {
     if (err) throw err;
     if (results[0]["COUNT(1)"]) {
       let get_user_sql = `SELECT password FROM user WHERE email = '${req.query.email}';`;
